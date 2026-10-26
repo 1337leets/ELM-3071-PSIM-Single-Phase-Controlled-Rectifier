@@ -6,11 +6,11 @@ Phase-controlled single-phase full-wave rectifier designed in PSIM for ELM-3071 
 - Input: 85 V rms, 50 Hz
 - Firing angle: α = 60°
 - Thyristor full bridge (T12 / T34) with a resistive load and an optional output filter capacitor
-- Gate control: a zero-crossing comparator on the source voltage picks the half cycle, a sawtooth compared against a DC reference sets α, and two AND gates route the firing pulse to T12 or T34
+- Gate control uses a zero-crossing comparator on the source voltage to pick the half cycle, while a sawtooth compared against a DC reference sets α, and two AND gates route the firing pulse to T12 or T34
 
 ![Power stage and gate control](images/course_schematic.png)
 
-Expected average output voltage:
+The expected average output voltage follows from the firing angle.
 
 ```
 Vm = 85 · √2 = 120.208 V
@@ -22,21 +22,21 @@ Vd = (Vm / π) · (1 + cos α) = 57.395 V
 The waveforms below come from the lab version, which runs the same circuit
 at the same operating point (85 V, α = 60°).
 
-Grid voltage and grid current (current also shown ×10):
+The first plot shows the grid voltage and grid current (current also shown ×10).
 
 ![Grid voltage and current](images/lab_grid_waveforms.png)
 
-Output voltage and current:
+The second plot shows the output voltage and current.
 
 ![Output voltage and current](images/lab_output_waveforms.png)
 
-Grid side and output side together: the output follows the grid voltage from
+The third plot puts the grid side and the output side together. The output follows the grid voltage from
 α = 60° in every half cycle, and the grid current reverses sign with the
 negative half cycle while the output current stays positive.
 
 ![Grid and output comparison](images/lab_input_output_comparison.png)
 
-Key results from the course report (resistive load):
+The course report gives the following results for the resistive load.
 
 | Quantity | Value |
 |----------|-------|
